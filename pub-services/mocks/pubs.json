@@ -23,5 +23,31 @@
         "name": "Triple Karmeliet"
       }
     ]
+  },
+  {
+    "name": "221b Baker street",
+    "owner": {
+      "firstName": "Valentin",
+      "lastName": "Voison",
+      "mail": "contact@211b.com"
+    },
+    "openDays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "openHours": {
+      "start": 10,
+      "end": 1
+    },
+    "beers": [
+      {
+        "type": "Blonde",
+        "name": "Triple Karmeliet"
+      }
+    ]
   }
 ]
