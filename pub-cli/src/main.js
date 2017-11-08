@@ -1,10 +1,10 @@
-var serv = require('pub-services');
+let serv = require('pub-services');
 function getListPub(){
-  var liste = serv.services.pubService.listePubs();
+  let liste = serv.services.pubService.listePubs();
   return liste;
 }
 function getPubsOuverts(){
-  var liste = serv.services.pubService.listePubsOuvertsJours();
+  let liste = serv.services.pubService.listePubsOuvertsJours();
   return liste;
 }
 

@@ -1,12 +1,12 @@
-var pubs = require('../mocks/pubs.json');
-var moment = require('moment');
+let pubs = require('../mocks/pubs.json');
+let moment = require('moment');
 //var pubsOuverts=[];
-var today = moment().format('dddd');
+let today = moment().format('dddd');
 function listePubs(){
   return pubs;
 }
 function listePubsOuvertsJours(){
-  var pubsOuverts = pubs.filter(openToday)
+  let pubsOuverts = pubs.filter(openToday)
   return pubsOuverts;
   /*for(pub of pubs ){
 
