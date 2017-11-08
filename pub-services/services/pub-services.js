@@ -1,9 +1,11 @@
 const pubclass = require('./pub.js');
 const pubs = require('../mocks/pubs.json');
+const ownerClass = require('./owner.js');
 
 let pubList=[];
 for(p of pubs){
-  pubList.push(new pubclass.Pub(p.name,p.owner,p.openDays,p.openHours,p.beers));
+  const own = new ownerClass.Owner(p.owner.firstName,p.owner.lastName,p.owner.mail);
+  pubList.push(new pubclass.Pub(p.name,own,p.openDays,p.openHours,p.beers));
 }
 
 function listePubs(){

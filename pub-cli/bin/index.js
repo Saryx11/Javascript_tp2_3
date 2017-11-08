@@ -12,6 +12,6 @@ if (program.list) {
 }
 if(program.open){
   const listOuverts = require('../src/main').getPubsOuverts();
-  console.log(listOuverts.map(pub=>pub.name));
-
+  //console.log(listOuverts.map(pub=>pub.name));
+  console.log(listOuverts);
 }

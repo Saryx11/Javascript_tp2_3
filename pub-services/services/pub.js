@@ -1,5 +1,4 @@
 const moment = require('moment');
-const today = moment().format('dddd');
 class Pub{
   constructor(name,owner,openDays,openHours,beers){
     this.name=name;
@@ -8,10 +7,11 @@ class Pub{
     this.openHours=openHours;
     this.beers=beers;
   }
-  isOpen(day = today){
+  isOpen(day = moment().format('dddd')){
     return this.openDays.includes(day);
   }
 }
+
 module.exports={
   Pub: Pub
 }
