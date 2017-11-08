@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-let program = require('commander');
+const program = require('commander');
 program
 .version('1.0.0')
 .option('-l, --list', 'Get the pubs list')
@@ -7,11 +7,11 @@ program
 .parse(process.argv);
 
 if (program.list) {
-  let liste = require('../src/main').getListPub();
-  console.log(liste);
+  const liste = require('../src/main').getListPub();
+  console.log(liste.map(pub=>pub.name));
 }
 if(program.open){
-  let listOuverts = require('../src/main').getPubsOuverts();
-  console.log(listOuverts);
+  const listOuverts = require('../src/main').getPubsOuverts();
+  console.log(listOuverts.map(pub=>pub.name));
 
 }

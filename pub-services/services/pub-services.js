@@ -1,12 +1,17 @@
-let pubs = require('../mocks/pubs.json');
-let moment = require('moment');
-//var pubsOuverts=[];
-let today = moment().format('dddd');
-function listePubs(){
-  return pubs;
+const pubclass = require('./pub.js');
+const pubs = require('../mocks/pubs.json');
+
+let pubList=[];
+for(p of pubs){
+  pubList.push(new pubclass.Pub(p.name,p.owner,p.openDays,p.openHours,p.beers));
 }
+
+function listePubs(){
+  return pubList;
+}
+
 function listePubsOuvertsJours(){
-  let pubsOuverts = pubs.filter(openToday)
+  const pubsOuverts = pubList.filter(pub=>pub.isOpen());
   return pubsOuverts;
   /*for(pub of pubs ){
 
@@ -16,9 +21,9 @@ function listePubsOuvertsJours(){
     }
   }*/
 }
-function openToday(element){
-  return element.openDays.includes(today);
-}
+/*function openToday(element){
+  return element.isOpen();
+}*/
 module.exports={
   listePubs: listePubs,
   listePubsOuvertsJours: listePubsOuvertsJours
